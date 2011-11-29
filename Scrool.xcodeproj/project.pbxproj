@@ -21,6 +21,7 @@
 		741909DC1484984A00E0B34F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741909BA1484984A00E0B34F /* Foundation.framework */; };
 		741909E41484984A00E0B34F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 741909E21484984A00E0B34F /* InfoPlist.strings */; };
 		741909E71484984A00E0B34F /* ScroolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 741909E61484984A00E0B34F /* ScroolTests.m */; };
+		741909F21484986A00E0B34F /* InfiniteTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 741909F11484986A00E0B34F /* InfiniteTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +39,24 @@
 		741909B81484984A00E0B34F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		741909BA1484984A00E0B34F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		741909BC1484984A00E0B34F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		741909C01484984A00E0B34F /* Scrool-Info.plist */ = {isa = PBXFileReference; path = "Scrool-Info.plist"; sourceTree = "<group>"; };
+		741909C01484984A00E0B34F /* Scrool-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Scrool-Info.plist"; sourceTree = "<group>"; };
 		741909C21484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		741909C41484984A00E0B34F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		741909C61484984A00E0B34F /* Scrool-Prefix.pch */ = {isa = PBXFileReference; path = "Scrool-Prefix.pch"; sourceTree = "<group>"; };
-		741909C71484984A00E0B34F /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		741909C61484984A00E0B34F /* Scrool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scrool-Prefix.pch"; sourceTree = "<group>"; };
+		741909C71484984A00E0B34F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		741909C81484984A00E0B34F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		741909CB1484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		741909CE1484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		741909D01484984A00E0B34F /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		741909D01484984A00E0B34F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		741909D11484984A00E0B34F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		741909D81484984A00E0B34F /* ScroolTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScroolTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		741909D91484984A00E0B34F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		741909E11484984A00E0B34F /* ScroolTests-Info.plist */ = {isa = PBXFileReference; path = "ScroolTests-Info.plist"; sourceTree = "<group>"; };
+		741909E11484984A00E0B34F /* ScroolTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScroolTests-Info.plist"; sourceTree = "<group>"; };
 		741909E31484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		741909E51484984A00E0B34F /* ScroolTests.h */ = {isa = PBXFileReference; path = ScroolTests.h; sourceTree = "<group>"; };
+		741909E51484984A00E0B34F /* ScroolTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScroolTests.h; sourceTree = "<group>"; };
 		741909E61484984A00E0B34F /* ScroolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScroolTests.m; sourceTree = "<group>"; };
+		741909F01484986A00E0B34F /* InfiniteTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteTableView.h; sourceTree = "<group>"; };
+		741909F11484986A00E0B34F /* InfiniteTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 		741909BE1484984A00E0B34F /* Scrool */ = {
 			isa = PBXGroup;
 			children = (
+				741909F01484986A00E0B34F /* InfiniteTableView.h */,
+				741909F11484986A00E0B34F /* InfiniteTableView.m */,
 				741909C71484984A00E0B34F /* AppDelegate.h */,
 				741909C81484984A00E0B34F /* AppDelegate.m */,
 				741909CA1484984A00E0B34F /* MainStoryboard_iPhone.storyboard */,
@@ -264,6 +269,7 @@
 				741909C51484984A00E0B34F /* main.m in Sources */,
 				741909C91484984A00E0B34F /* AppDelegate.m in Sources */,
 				741909D21484984A00E0B34F /* ViewController.m in Sources */,
+				741909F21484986A00E0B34F /* InfiniteTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +332,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -352,7 +358,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -443,6 +449,7 @@
 				741909EC1484984A00E0B34F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		741909ED1484984A00E0B34F /* Build configuration list for PBXNativeTarget "ScroolTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +458,7 @@
 				741909EF1484984A00E0B34F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

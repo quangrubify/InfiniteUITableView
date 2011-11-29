@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InfiniteTableView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<InfiniteTableViewDelegate>
+
+{
+    InfiniteTableView *scrollView;
+}
 
 @end
