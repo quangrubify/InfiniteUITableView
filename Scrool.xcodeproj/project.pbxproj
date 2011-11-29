@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		741909B91484984A00E0B34F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741909B81484984A00E0B34F /* UIKit.framework */; };
+		741909BB1484984A00E0B34F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741909BA1484984A00E0B34F /* Foundation.framework */; };
+		741909BD1484984A00E0B34F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741909BC1484984A00E0B34F /* CoreGraphics.framework */; };
+		741909C31484984A00E0B34F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 741909C11484984A00E0B34F /* InfoPlist.strings */; };
+		741909C51484984A00E0B34F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 741909C41484984A00E0B34F /* main.m */; };
+		741909C91484984A00E0B34F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 741909C81484984A00E0B34F /* AppDelegate.m */; };
+		741909CC1484984A00E0B34F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741909CA1484984A00E0B34F /* MainStoryboard_iPhone.storyboard */; };
+		741909CF1484984A00E0B34F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741909CD1484984A00E0B34F /* MainStoryboard_iPad.storyboard */; };
+		741909D21484984A00E0B34F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741909D11484984A00E0B34F /* ViewController.m */; };
+		741909DA1484984A00E0B34F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741909D91484984A00E0B34F /* SenTestingKit.framework */; };
+		741909DB1484984A00E0B34F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741909B81484984A00E0B34F /* UIKit.framework */; };
+		741909DC1484984A00E0B34F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741909BA1484984A00E0B34F /* Foundation.framework */; };
+		741909E41484984A00E0B34F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 741909E21484984A00E0B34F /* InfoPlist.strings */; };
+		741909E71484984A00E0B34F /* ScroolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 741909E61484984A00E0B34F /* ScroolTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		741909DD1484984A00E0B34F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 741909AB1484984900E0B34F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 741909B31484984A00E0B34F;
+			remoteInfo = Scrool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		741909B41484984A00E0B34F /* Scrool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		741909B81484984A00E0B34F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		741909BA1484984A00E0B34F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		741909BC1484984A00E0B34F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		741909C01484984A00E0B34F /* Scrool-Info.plist */ = {isa = PBXFileReference; path = "Scrool-Info.plist"; sourceTree = "<group>"; };
+		741909C21484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		741909C41484984A00E0B34F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		741909C61484984A00E0B34F /* Scrool-Prefix.pch */ = {isa = PBXFileReference; path = "Scrool-Prefix.pch"; sourceTree = "<group>"; };
+		741909C71484984A00E0B34F /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		741909C81484984A00E0B34F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		741909CB1484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		741909CE1484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		741909D01484984A00E0B34F /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		741909D11484984A00E0B34F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		741909D81484984A00E0B34F /* ScroolTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScroolTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		741909D91484984A00E0B34F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		741909E11484984A00E0B34F /* ScroolTests-Info.plist */ = {isa = PBXFileReference; path = "ScroolTests-Info.plist"; sourceTree = "<group>"; };
+		741909E31484984A00E0B34F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		741909E51484984A00E0B34F /* ScroolTests.h */ = {isa = PBXFileReference; path = ScroolTests.h; sourceTree = "<group>"; };
+		741909E61484984A00E0B34F /* ScroolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScroolTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		741909B11484984A00E0B34F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741909B91484984A00E0B34F /* UIKit.framework in Frameworks */,
+				741909BB1484984A00E0B34F /* Foundation.framework in Frameworks */,
+				741909BD1484984A00E0B34F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741909D41484984A00E0B34F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741909DA1484984A00E0B34F /* SenTestingKit.framework in Frameworks */,
+				741909DB1484984A00E0B34F /* UIKit.framework in Frameworks */,
+				741909DC1484984A00E0B34F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		741909A91484984900E0B34F = {
+			isa = PBXGroup;
+			children = (
+				741909BE1484984A00E0B34F /* Scrool */,
+				741909DF1484984A00E0B34F /* ScroolTests */,
+				741909B71484984A00E0B34F /* Frameworks */,
+				741909B51484984A00E0B34F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		741909B51484984A00E0B34F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				741909B41484984A00E0B34F /* Scrool.app */,
+				741909D81484984A00E0B34F /* ScroolTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		741909B71484984A00E0B34F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				741909B81484984A00E0B34F /* UIKit.framework */,
+				741909BA1484984A00E0B34F /* Foundation.framework */,
+				741909BC1484984A00E0B34F /* CoreGraphics.framework */,
+				741909D91484984A00E0B34F /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		741909BE1484984A00E0B34F /* Scrool */ = {
+			isa = PBXGroup;
+			children = (
+				741909C71484984A00E0B34F /* AppDelegate.h */,
+				741909C81484984A00E0B34F /* AppDelegate.m */,
+				741909CA1484984A00E0B34F /* MainStoryboard_iPhone.storyboard */,
+				741909CD1484984A00E0B34F /* MainStoryboard_iPad.storyboard */,
+				741909D01484984A00E0B34F /* ViewController.h */,
+				741909D11484984A00E0B34F /* ViewController.m */,
+				741909BF1484984A00E0B34F /* Supporting Files */,
+			);
+			path = Scrool;
+			sourceTree = "<group>";
+		};
+		741909BF1484984A00E0B34F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				741909C01484984A00E0B34F /* Scrool-Info.plist */,
+				741909C11484984A00E0B34F /* InfoPlist.strings */,
+				741909C41484984A00E0B34F /* main.m */,
+				741909C61484984A00E0B34F /* Scrool-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		741909DF1484984A00E0B34F /* ScroolTests */ = {
+			isa = PBXGroup;
+			children = (
+				741909E51484984A00E0B34F /* ScroolTests.h */,
+				741909E61484984A00E0B34F /* ScroolTests.m */,
+				741909E01484984A00E0B34F /* Supporting Files */,
+			);
+			path = ScroolTests;
+			sourceTree = "<group>";
+		};
+		741909E01484984A00E0B34F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				741909E11484984A00E0B34F /* ScroolTests-Info.plist */,
+				741909E21484984A00E0B34F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		741909B31484984A00E0B34F /* Scrool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 741909EA1484984A00E0B34F /* Build configuration list for PBXNativeTarget "Scrool" */;
+			buildPhases = (
+				741909B01484984A00E0B34F /* Sources */,
+				741909B11484984A00E0B34F /* Frameworks */,
+				741909B21484984A00E0B34F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scrool;
+			productName = Scrool;
+			productReference = 741909B41484984A00E0B34F /* Scrool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		741909D71484984A00E0B34F /* ScroolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 741909ED1484984A00E0B34F /* Build configuration list for PBXNativeTarget "ScroolTests" */;
+			buildPhases = (
+				741909D31484984A00E0B34F /* Sources */,
+				741909D41484984A00E0B34F /* Frameworks */,
+				741909D51484984A00E0B34F /* Resources */,
+				741909D61484984A00E0B34F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				741909DE1484984A00E0B34F /* PBXTargetDependency */,
+			);
+			name = ScroolTests;
+			productName = ScroolTests;
+			productReference = 741909D81484984A00E0B34F /* ScroolTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		741909AB1484984900E0B34F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 741909AE1484984900E0B34F /* Build configuration list for PBXProject "Scrool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 741909A91484984900E0B34F;
+			productRefGroup = 741909B51484984A00E0B34F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				741909B31484984A00E0B34F /* Scrool */,
+				741909D71484984A00E0B34F /* ScroolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		741909B21484984A00E0B34F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741909C31484984A00E0B34F /* InfoPlist.strings in Resources */,
+				741909CC1484984A00E0B34F /* MainStoryboard_iPhone.storyboard in Resources */,
+				741909CF1484984A00E0B34F /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741909D51484984A00E0B34F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741909E41484984A00E0B34F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		741909D61484984A00E0B34F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		741909B01484984A00E0B34F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741909C51484984A00E0B34F /* main.m in Sources */,
+				741909C91484984A00E0B34F /* AppDelegate.m in Sources */,
+				741909D21484984A00E0B34F /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741909D31484984A00E0B34F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741909E71484984A00E0B34F /* ScroolTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		741909DE1484984A00E0B34F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 741909B31484984A00E0B34F /* Scrool */;
+			targetProxy = 741909DD1484984A00E0B34F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		741909C11484984A00E0B34F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				741909C21484984A00E0B34F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		741909CA1484984A00E0B34F /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				741909CB1484984A00E0B34F /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		741909CD1484984A00E0B34F /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				741909CE1484984A00E0B34F /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		741909E21484984A00E0B34F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				741909E31484984A00E0B34F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		741909E81484984A00E0B34F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		741909E91484984A00E0B34F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		741909EB1484984A00E0B34F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scrool/Scrool-Prefix.pch";
+				INFOPLIST_FILE = "Scrool/Scrool-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		741909EC1484984A00E0B34F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scrool/Scrool-Prefix.pch";
+				INFOPLIST_FILE = "Scrool/Scrool-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		741909EE1484984A00E0B34F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Scrool.app/Scrool";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scrool/Scrool-Prefix.pch";
+				INFOPLIST_FILE = "ScroolTests/ScroolTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		741909EF1484984A00E0B34F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Scrool.app/Scrool";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Scrool/Scrool-Prefix.pch";
+				INFOPLIST_FILE = "ScroolTests/ScroolTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		741909AE1484984900E0B34F /* Build configuration list for PBXProject "Scrool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				741909E81484984A00E0B34F /* Debug */,
+				741909E91484984A00E0B34F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		741909EA1484984A00E0B34F /* Build configuration list for PBXNativeTarget "Scrool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				741909EB1484984A00E0B34F /* Debug */,
+				741909EC1484984A00E0B34F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		741909ED1484984A00E0B34F /* Build configuration list for PBXNativeTarget "ScroolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				741909EE1484984A00E0B34F /* Debug */,
+				741909EF1484984A00E0B34F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 741909AB1484984900E0B34F /* Project object */;
+}
