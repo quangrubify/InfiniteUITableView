@@ -44,6 +44,7 @@
         [self addSubview:labelContainerView];
         [labelContainerView setUserInteractionEnabled:NO];
         labelContainerView.backgroundColor = [UIColor clearColor];
+        labelContainerView.userInteractionEnabled = YES;
         // hide horizontal scroll indicator so our recentering trick is not revealed
         [self setShowsHorizontalScrollIndicator:NO];
     }
@@ -100,6 +101,7 @@
     UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, labelContainerView.frame.size.height/2 - height/2, width, height)] autorelease];
     label.backgroundColor = [UIColor clearColor];
     [labelContainerView addSubview:label];
+    label.userInteractionEnabled = YES;
     return label;
 }
 

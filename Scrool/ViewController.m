@@ -20,36 +20,58 @@
 
 -(UIView*)infiniteTableView:(InfiniteTableView*)scrollView andViewForIndex:(int)index widthRect:(CGRect)rect
 {
+    UIView *rootView = [[UIView alloc] initWithFrame:rect];
     
-    UILabel *view = [[UILabel alloc] init];
-    view.frame = rect;
+//    UILabel *view = [[UILabel alloc] init];
+//    view.frame = CGRectMake(0, 0, rect.size.width - 10, rect.size.height-10);
+//    [rootView addSubview: view];
+//    [view release];
+//    view.center = CGPointMake(rect.size.width/2, rect.size.height/2);
+//    view.text = [NSString stringWithFormat:@"Label %d", index];
+//    view.textAlignment = UITextAlignmentCenter;
+//    if (index %2 == 0) {
+//        view.textColor  = [UIColor yellowColor];
+//    }else
+//    {
+//        view.textColor = [UIColor magentaColor];
+//    }
     
-    view.text = [NSString stringWithFormat:@"Label %d", index];
-    view.textAlignment = UITextAlignmentCenter;
+    UIButton *bt  = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+    [bt setTitle: [NSString stringWithFormat:@"Label %d", index] forState:UIControlStateNormal];
+    [rootView addSubview:bt];
+    bt.frame = CGRectMake(0, 0, rect.size.width - 10, rect.size.height-10);
+    [bt release];
+    bt.center = CGPointMake(rect.size.width/2, rect.size.height/2);
+    [bt addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
     if (index %2 == 0) {
-        view.backgroundColor = [UIColor yellowColor];
+        [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }else
     {
-        view.backgroundColor = [UIColor magentaColor];
+        [bt setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     }
-    
-    return [view autorelease];
+
+    return [rootView autorelease];
 }
 
+
+-(void)click:(id)sender
+{
+    NSLog(@"\nDo something here\n");
+}
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 10 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
+    
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 10 andColumnWidth: 100 andColumnHeight: 70 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2, 480/2 - 200);
     scrollView.dataDelegate = self;
     [scrollView release];
     scrollView.backgroundColor = [UIColor redColor];
     
-    
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 10 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 20 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2 , 480/2 - 100);
     scrollView.dataDelegate = self;
@@ -57,14 +79,14 @@
     scrollView.backgroundColor = [UIColor grayColor];
     
     
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 10 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 30 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2 , 480/2 );
     scrollView.dataDelegate = self;
     [scrollView release];
     scrollView.backgroundColor = [UIColor greenColor];
     
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 10 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 40 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2 , 480/2 + 100);
     scrollView.dataDelegate = self;
