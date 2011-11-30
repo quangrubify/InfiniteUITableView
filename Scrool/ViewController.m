@@ -43,7 +43,7 @@
     [bt release];
     bt.center = CGPointMake(rect.size.width/2, rect.size.height/2);
     [bt addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-    
+    bt.tag = index;
     if (index %2 == 0) {
         [bt setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     }else
@@ -58,6 +58,11 @@
 -(void)click:(id)sender
 {
     NSLog(@"\nDo something here\n");
+    
+    UIButton *bt = (UIButton*)sender;
+    int index = bt.tag;
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info" message:[NSString stringWithFormat:@"Button at index: %d", index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
 }
 
 -(void)viewDidLoad
