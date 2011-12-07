@@ -95,7 +95,7 @@
     scrollView.backgroundColor = [UIColor greenColor];
     [scrollView setColoumToCenter: 26];    
     
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 40 andColumnWidth: 500 andColumnHeight: 50 andGap: 5];
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 40 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2 , 480/2 + 100);
     scrollView.dataDelegate = self;
