@@ -54,7 +54,6 @@
     return [rootView autorelease];
 }
 
-
 -(void)click:(id)sender
 {
     NSLog(@"\nDo something here\n");
@@ -62,42 +61,62 @@
     UIButton *bt = (UIButton*)sender;
     int index = bt.tag;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info" message:[NSString stringWithFormat:@"Button at index: %d", index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Info" message:[NSString stringWithFormat:@"Button at index: %d", index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] autorelease];
+    [alert show];
 }
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 10 andColumnWidth: 100 andColumnHeight: 70 andGap: 5];
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns:90 andColumnWidth: 280 andColumnHeight: 70 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2, 480/2 - 200);
     scrollView.dataDelegate = self;
     [scrollView release];
     scrollView.backgroundColor = [UIColor redColor];
+    [scrollView setColoumToCenter: 14];
     
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 20 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
+    
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 20 andColumnWidth: 156 andColumnHeight: 50 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2 , 480/2 - 100);
     scrollView.dataDelegate = self;
     [scrollView release];
     scrollView.backgroundColor = [UIColor grayColor];
+    [scrollView setColoumToCenter: 15];
     
     
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 30 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 30 andColumnWidth: 215 andColumnHeight: 50 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2 , 480/2 );
     scrollView.dataDelegate = self;
     [scrollView release];
     scrollView.backgroundColor = [UIColor greenColor];
+    [scrollView setColoumToCenter: 26];    
     
-    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 40 andColumnWidth: 100 andColumnHeight: 50 andGap: 5];
+    scrollView = [[InfiniteTableView alloc] initWithFrame:CGRectMake(0, 0, 320, 100) andNumberOfColumns: 40 andColumnWidth: 500 andColumnHeight: 50 andGap: 5];
     [self.view addSubview: scrollView];
     scrollView.center = CGPointMake(320/2 , 480/2 + 100);
     scrollView.dataDelegate = self;
     [scrollView release];
     scrollView.backgroundColor = [UIColor blueColor];
+    [scrollView setColoumToCenter: 35];
     
+    
+    UIButton *click = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [click setTitle:@"Click" forState:UIControlStateNormal];
+    [click addTarget:self action:@selector(hello:) forControlEvents:UIControlEventTouchUpInside];
+    click.frame = CGRectMake(0, 0, 100, 50);
+    [self.view addSubview:click];
+    click.center = CGPointMake(320/2, 480 - 50);
+    
+}
+
+-(void)hello:(id)sender
+{
+    NSLog(@"\nHello world.....\n");
+    [scrollView setColoumToCenter: 10];
 }
 
 - (void)viewDidUnload

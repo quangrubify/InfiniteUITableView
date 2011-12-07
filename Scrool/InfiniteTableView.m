@@ -30,6 +30,7 @@
 - (id)initWithFrame:(CGRect)frame andNumberOfColumns: (NSInteger)columns andColumnWidth:(NSInteger)_width andColumnHeight:(int)_height andGap:(NSInteger)_gap{
     if ((self = [super initWithFrame:frame])) {
         
+        self.delegate = self;
         gap = _gap;
         numberOfColounm = columns;
         leftIndex = columns-1;
@@ -61,9 +62,10 @@
     CGFloat centerOffsetX = (contentWidth - [self bounds].size.width) / 2.0;
     CGFloat distanceFromCenter = fabs(currentOffset.x - centerOffsetX);
     
-    if (distanceFromCenter > (contentWidth / 4.0)) {
+    if (distanceFromCenter > (contentWidth / 4.0)) 
+    {
+        NSLog(@"\nRecenter.....\n");
         self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y);
-        
         // move content by the same amount so it appears to stay still
         for (UILabel *label in visibleLabels) {
             CGPoint center = [labelContainerView convertPoint:label.center toView:self];
@@ -93,6 +95,7 @@
 }
 
 
+
 #pragma mark -
 #pragma mark Label Tiling
 
@@ -112,7 +115,6 @@
         
         UILabel *label = [visibleLabels lastObject];
         rightIndex = label.tag;
-        NSLog(@"\nLast tag: %d\n", rightIndex);
         rightIndex++;
         if (rightIndex >= numberOfColounm) {
             rightIndex = 0;
@@ -149,7 +151,6 @@
         
         UILabel *label = [visibleLabels objectAtIndex: 0];
         leftIndex = label.tag;
-        NSLog(@"\nFirst tag: %d\n", leftIndex);
         leftIndex--;
         if (leftIndex < 0) {
             leftIndex = numberOfColounm-1;
@@ -179,6 +180,28 @@
     return CGRectGetMinX(frame);
 }
 
+-(void)setColoumToCenter:(int)column
+{
+    leftIndex = numberOfColounm -1;
+    rightIndex = 0;
+    currentIndex = -1;
+    for (UILabel *label in self.visibleLabels) {
+        [label removeFromSuperview];
+    }
+    [self.visibleLabels removeAllObjects];
+    
+    CGRect visibleBounds = [self convertRect:[self bounds] toView:labelContainerView];
+    NSLog(@"\n---->>>>Visible bound: %@\n", NSStringFromCGRect(visibleBounds));
+    CGFloat minimumVisibleX = CGRectGetMinX(visibleBounds);
+    CGFloat maximumVisibleX = CGRectGetMaxX(visibleBounds);
+    int l = width+gap;
+    minimumVisibleX -=   (column-1)*l + l/2 - 158;
+    maximumVisibleX -=   (column-1)*l + l/2 - 158;
+    [self tileLabelsFromMinXFirstTime:minimumVisibleX  toMaxX:maximumVisibleX];
+    [self setContentOffset:self.contentOffset animated:NO];
+    [self layoutSubviews];
+}
+
 - (void)tileLabelsFromMinXFirstTime:(CGFloat)minimumVisibleX toMaxX:(CGFloat)maximumVisibleX {
     
     // the upcoming tiling logic depends on there already being at least one label in the visibleLabels array, so
@@ -186,6 +209,9 @@
     if ([visibleLabels count] == 0) {
         [self placeNewLabelOnRight:minimumVisibleX];
         rightIndex++;
+        if (rightIndex>= numberOfColounm) {
+            rightIndex -- ;
+        }
     }
     
     // add labels that are missing on right side
@@ -194,6 +220,9 @@
     while (rightEdge < maximumVisibleX) {
         rightEdge = [self placeNewLabelOnRight:rightEdge];
         rightIndex++;
+        if (rightIndex>= numberOfColounm) {
+            rightIndex -- ;
+        }
     }
     
     // add labels that are missing on left side
@@ -223,14 +252,11 @@
     
     for (int i=0; i<[visibleLabels count]; i++) {
         UILabel *l = [visibleLabels objectAtIndex:i];
-        NSLog(@"\n-->>tag: %d\n", l.tag);
     }
     
     UILabel *l = [visibleLabels objectAtIndex:0];
-    NSLog(@"\n-->>First tag: %d\n", l.tag);
     
     l = [visibleLabels lastObject];
-    NSLog(@"\n-->>Last tag: %d\n", l.tag);
 }
 
 - (void)tileLabelsFromMinX:(CGFloat)minimumVisibleX toMaxX:(CGFloat)maximumVisibleX {
