@@ -185,6 +185,7 @@
     leftIndex = numberOfColounm -1;
     rightIndex = 0;
     currentIndex = -1;
+    
     for (UILabel *label in self.visibleLabels) {
         [label removeFromSuperview];
     }
@@ -228,10 +229,10 @@
     // add labels that are missing on left side
     UILabel *firstLabel = [visibleLabels objectAtIndex:0];
     CGFloat leftEdge = CGRectGetMinX([firstLabel frame]);
+    
     while (leftEdge > minimumVisibleX) {
-        
-        leftIndex = numberOfColounm - 1;
         leftEdge = [self placeNewLabelOnLeft:leftEdge];
+        leftIndex--;
     }
     
     // remove labels that have fallen off right edge

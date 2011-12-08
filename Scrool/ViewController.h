@@ -13,6 +13,7 @@
 
 {
     InfiniteTableView *scrollView;
+    UITextField *text;
 }
 
 @end
