@@ -57,12 +57,10 @@
 -(void)click:(id)sender
 {
     NSLog(@"\nDo something here\n");
-    
     UIButton *bt = (UIButton*)sender;
     int index = bt.tag;
-    
-    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"Info" message:[NSString stringWithFormat:@"Button at index: %d", index] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] autorelease];
-    [alert show];
+    [bt setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+    [scrollView setColumnAtIndex: index];
 }
 
 -(void)viewDidLoad

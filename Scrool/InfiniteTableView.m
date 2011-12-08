@@ -27,9 +27,49 @@
     [super dealloc];
 }
 
+-(void)setColumnAtIndex:(int)index
+{
+    
+    if (selectedIndex != -1) {//first time
+     
+        //get Label at index
+        UILabel *currentView = nil;
+        for (UILabel *label in self.visibleLabels) {
+            if (label.tag == selectedIndex) {
+                currentView = [label retain];
+                break;
+            }
+        }
+        
+        if (currentView) {
+            //get view at currentIndex
+            UIView *view = [[[UIView alloc] initWithFrame:CGRectMake(0, labelContainerView.frame.size.height/2 - height/2, width, height)] autorelease];
+            if (self.dataDelegate) {
+                if ([self.dataDelegate respondsToSelector:@selector(infiniteTableView:andViewForIndex:widthRect:)]) {
+                    view = [self.dataDelegate infiniteTableView:self andViewForIndex:selectedIndex widthRect: CGRectMake(0, 0, width, height)];
+                }
+            }
+            
+            
+            for (UIView *v  in currentView.subviews) {
+                [v removeFromSuperview];
+            }
+            
+            view.frame = CGRectMake(0, 0, width, height);
+            [currentView addSubview: view];
+            
+            [currentView release];
+        }
+    }
+    
+    selectedIndex = index;
+
+}
+
 - (id)initWithFrame:(CGRect)frame andNumberOfColumns: (NSInteger)columns andColumnWidth:(NSInteger)_width andColumnHeight:(int)_height andGap:(NSInteger)_gap{
     if ((self = [super initWithFrame:frame])) {
         
+        selectedIndex = -1;
         self.delegate = self;
         gap = _gap;
         numberOfColounm = columns;
@@ -93,8 +133,6 @@
         currentIndex = 0;        
     }
 }
-
-
 
 #pragma mark -
 #pragma mark Label Tiling
@@ -211,7 +249,7 @@
         [self placeNewLabelOnRight:minimumVisibleX];
         rightIndex++;
         if (rightIndex>= numberOfColounm) {
-            rightIndex -- ;
+            rightIndex=0;
         }
     }
     
@@ -222,7 +260,7 @@
         rightEdge = [self placeNewLabelOnRight:rightEdge];
         rightIndex++;
         if (rightIndex>= numberOfColounm) {
-            rightIndex -- ;
+            rightIndex=0;
         }
     }
     
