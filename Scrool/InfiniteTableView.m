@@ -88,8 +88,33 @@
         labelContainerView.userInteractionEnabled = YES;
         // hide horizontal scroll indicator so our recentering trick is not revealed
         [self setShowsHorizontalScrollIndicator:NO];
+        self.delegate  = self;
     }
     return self;
+}
+
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    NSLog(@"\n-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView...\n");
+    leftIndex = numberOfColounm -1;
+    rightIndex = 0;
+    currentIndex = -1;
+    
+    for (UILabel *label in self.visibleLabels) {
+        [label removeFromSuperview];
+    }
+    [self.visibleLabels removeAllObjects];
+    
+    CGRect visibleBounds = [self convertRect:[self bounds] toView:labelContainerView];
+    NSLog(@"\n---->>>>Visible bound: %@\n", NSStringFromCGRect(visibleBounds));
+    CGFloat minimumVisibleX = CGRectGetMinX(visibleBounds);
+    CGFloat maximumVisibleX = CGRectGetMaxX(visibleBounds);
+    int l = width+gap;
+    minimumVisibleX -=   (column-1)*l + l/2 - 158;
+    maximumVisibleX -=   (column-1)*l + l/2 - 158;
+    [self tileLabelsFromMinXFirstTime:minimumVisibleX  toMaxX:maximumVisibleX];
+    [self setContentOffset:self.contentOffset animated:NO];
+    [self layoutSubviews];
 }
 
 #pragma mark -
@@ -218,27 +243,11 @@
     return CGRectGetMinX(frame);
 }
 
--(void)setColoumToCenter:(int)column
+-(void)setColoumToCenter:(int)column_
 {
-    leftIndex = numberOfColounm -1;
-    rightIndex = 0;
-    currentIndex = -1;
-    
-    for (UILabel *label in self.visibleLabels) {
-        [label removeFromSuperview];
-    }
-    [self.visibleLabels removeAllObjects];
-    
-    CGRect visibleBounds = [self convertRect:[self bounds] toView:labelContainerView];
-    NSLog(@"\n---->>>>Visible bound: %@\n", NSStringFromCGRect(visibleBounds));
-    CGFloat minimumVisibleX = CGRectGetMinX(visibleBounds);
-    CGFloat maximumVisibleX = CGRectGetMaxX(visibleBounds);
-    int l = width+gap;
-    minimumVisibleX -=   (column-1)*l + l/2 - 158;
-    maximumVisibleX -=   (column-1)*l + l/2 - 158;
-    [self tileLabelsFromMinXFirstTime:minimumVisibleX  toMaxX:maximumVisibleX];
-    [self setContentOffset:self.contentOffset animated:NO];
-    [self layoutSubviews];
+    NSLog(@"\nCooll and cool....\n");
+    [self setContentOffset: CGPointMake(0, self.contentOffset.y) animated: YES];
+    column = column_;
 }
 
 - (void)tileLabelsFromMinXFirstTime:(CGFloat)minimumVisibleX toMaxX:(CGFloat)maximumVisibleX {

@@ -20,11 +20,13 @@
     int gap;
     int centerColum;
     int selectedIndex;
+    int column;
 }
 
 @property(nonatomic, assign) id<InfiniteTableViewDelegate> dataDelegate;
 - (id)initWithFrame:(CGRect)frame andNumberOfColumns: (NSInteger)columns andColumnWidth:(NSInteger)_width andColumnHeight:(int)_height andGap:(NSInteger)_gap;
 - (void)tileLabelsFromMinXFirstTime:(CGFloat)minimumVisibleX toMaxX:(CGFloat)maximumVisibleX;
 -(void)setColumnAtIndex:(int)index;
+-(void)setColoumToCenter:(int)column_;
 
 @end
